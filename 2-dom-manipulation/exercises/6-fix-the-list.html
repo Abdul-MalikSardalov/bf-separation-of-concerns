@@ -46,6 +46,20 @@
                     debugger;
 
                     // write me! (... without using cloneNode, that's kind of cheating)
+                    const h1Element = document.createElement('h1');
+                    h1Element.innerText = 'a list of things';
+
+                    document.getElementById('actual').prepend(h1Element);
+
+                    const ulList = document.createElement('ul');
+                    ulList.innerHTML = `
+                        <li>robots</li>
+                        <li>solar systems</li>
+                        <li>oil</li>
+                    `;
+
+                    const oldOl = document.querySelector('#actual ol');
+                    oldOl.replaceWith(ulList);
                 </script>
             </div>
 

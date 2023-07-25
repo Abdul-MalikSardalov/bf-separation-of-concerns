@@ -10,9 +10,16 @@ console.log(divEl.nodeName + ' (before)', divEl.cloneNode(true));
 
 // --- write some code ---
 //  replace the <p>
+const navEl = document.createElement('nav');
+divEl.replaceChild(navEl, divEl.querySelector('p'));
 //  insert something before the <section>
+const h2El = document.createElement('h2');
+divEl.insertBefore(h2El, divEl.querySelector('section'));
 //  remove the <h1>
+divEl.querySelector('h1').remove();
 //  append something to the end
+const pEl = document.createElement('p');
+divEl.appendChild(pEl);
 
 // --- --- --- --- --- ---
 

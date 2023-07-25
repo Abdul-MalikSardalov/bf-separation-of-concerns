@@ -45,6 +45,14 @@
                     debugger;
 
                     // write me! (... without using cloneNode, that's kind of cheating)
+                    const h1Element = document.createElement('h1');
+                    h1Element.innerText = 'a list of things';
+
+                    const actual = document.getElementById('actual');
+                    actual.prepend(h1Element);
+
+                    const liList = document.querySelectorAll('#actual li');
+                    liList[1].innerText = 'solar systems';
                 </script>
             </div>
 

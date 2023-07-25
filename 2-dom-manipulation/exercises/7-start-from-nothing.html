@@ -46,6 +46,46 @@
                     debugger;
 
                     // write me! (... without using cloneNode, that's kind of cheating)
+                    const h2Element = document.createElement('h2');
+                    h2Element.innerText = 'a list of things';
+
+                    const ulElement = document.createElement('ul');
+                    ulElement.setAttribute('start', '0');
+
+                    const data = [
+                        {
+                            text: 'robots',
+                        },
+                        {
+                            text: 'solar systems',
+                        },
+                        {
+                            href: 'https://www.badgerbadgerbadger.com',
+                            target: '_blank',
+                            title: 'learn about badgers',
+                        },
+                        {
+                            text: 'oil',
+                        },
+                    ];
+
+                    data.forEach((liData) => {
+                        const li = document.createElement('li');
+                        if (liData.text) {
+                            li.innerText = liData.text;
+                        } else {
+                            const a = document.createElement('a');
+                            a.href = liData.href; // Исправлено с data.href на liData.href
+                            a.target = liData.target; // Исправлено с data.target на liData.target
+                            a.innerText = liData.title; // Исправлено с data.title на liData.title
+                            li.appendChild(a);
+                        }
+                        ulElement.appendChild(li); // Исправлено с ulElement.append(li, ulElement) на ulElement.appendChild(li)
+                    });
+
+                    const parent = document.getElementById('actual');
+                    parent.appendChild(h2Element); // Исправлено с parent.append(h2Element) на parent.appendChild(h2Element)
+                    parent.appendChild(ulElement);
                 </script>
             </div>
 
