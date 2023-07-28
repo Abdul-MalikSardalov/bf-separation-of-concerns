@@ -27,6 +27,9 @@ export const placeMove = (event) => {
     event.target.innerHTML = state.board[index];
 
     // // a challenge, make this game detect if there is a winner
-    // const winner = determineWinner(board);
-    // ...
+    const winner = determineWinner(state.board);
+
+    if (winner) {
+        alert(`The winner is ${winner}`);
+    }
 };

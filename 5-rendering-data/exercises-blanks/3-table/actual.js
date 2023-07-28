@@ -1,7 +1,7 @@
 'use strict';
 
 const actual = (arrOfArrs) => {
-    const tableEl = document.createElement('_');
+    const tableEl = document.createElement('table');
     const tbodyEl = document.createElement('_');
     for (const arr of _) {
         const trEl = document.createElement('_');
