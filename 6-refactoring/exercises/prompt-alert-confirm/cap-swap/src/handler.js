@@ -1,3 +1,12 @@
-import { capSwap } from './utils.js';
+import capSwap from './util.js';
+import data from './data.js';
 
-export const capSwapHandler = () => {};
+const capSwapHandler = () => {
+    while (data.userInput === null) {
+        data.userInput = prompt('enter a string to cap-swap');
+    }
+
+    alert(capSwap());
+};
+
+export default capSwapHandler;
